@@ -1,6 +1,24 @@
-/* --- ADDITIONAL STYLES FOR SUSTAINABILITY PAGE --- */
 
-/* Hero Section Styling */
+//* =================================================================== */
+/* ==       STYLE.CSS FOR RHEINGOLD SUSTAINABILITY PAGE             == */
+/* =================================================================== */
+
+/* --- 1. GENERAL STYLING & DEFAULTS --- */
+body {
+    background-color: #f8f9fa; /* Light gray from your website's CI */
+    font-family: 'Lato', sans-serif;
+    color: #212529; /* Standard dark text color */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+main {
+    display: block; /* Ensures <main> tag works correctly in older browsers */
+}
+
+
+/* --- 2. HERO SECTION (THE TOP BANNER) --- */
 .hero-section {
     position: relative;
     height: 60vh;
@@ -12,7 +30,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1599838883839-81974135b364?q=80&w=2940&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
-    color: #ffffff;
+    color: #ffffff; /* White text for the hero image */
 }
 
 .hero-content h1 {
@@ -26,51 +44,59 @@
     font-size: 20px;
     max-width: 700px;
     margin: 0 auto;
-    line-height: 1.6;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
-/* Sustainability Principles Section */
+
+/* --- 3. CORE PRINCIPLES SECTION --- */
 .sustainability-principles {
     padding: 100px 0;
-    background-color: #f8f9fa; /* Match our light theme */
+    background-color: #f8f9fa; /* Matches the body background */
+}
+
+.testimonials-container { /* Re-using this class for consistent centering */
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: #212529;
+    margin-bottom: 60px;
+    text-align: center;
 }
 
 .principles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 40px;
     text-align: left;
+}
+
+/* Using .testimonial-card class for the glass effect on principle cards */
+.testimonial-card {
+    /* The Glass Effect */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* The Floating Look */
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    padding: 35px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
 .principles-grid .testimonial-card h3 {
     font-size: 22px;
     font-weight: 900;
     color: #212529;
-    margin-bottom: 15px;
-}
-
-/* Call to Action (CTA) Section */
-.cta-section {
-    background-color: #ffffff; /* A clean white background for the CTA */
-    padding: 80px 0;
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #AF9453; /* CI Gold */
-    color: #ffffff;
-    padding: 15px 35px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 15px rgba(175, 148, 83, 0.2);
-}
-
-.cta-button:hover {
-    background-color: #9c824a; /* A slightly darker gold on hover */
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(175, 148, 83, 0.3);
-}
