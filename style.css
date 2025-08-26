@@ -1,6 +1,6 @@
-/* Rheingold – Nachhaltigkeit Seite (final) */
+/* Rheingold – Sustainability Page (bilingual, final) */
 
-/* Theme-Variablen & Grundsetup */
+/* Theme variables & base */
 .rg-sustainability {
   --card-bg: #fff;
   --card-border: #e6e6e6;
@@ -14,136 +14,97 @@
   line-height: 1.65;
 }
 
-/* Layout-Container */
-.rg-container {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: clamp(16px,2vw,32px);
-}
+/* Container */
+.rg-container { max-width:1160px; margin:0 auto; padding:clamp(16px,2vw,32px); }
 
-/* Breadcrumb/Top-Nav – optional */
-.rg-breadcrumbs { font-size: .92rem; color: var(--muted); margin-bottom: 8px; }
-.rg-breadcrumbs a { color: inherit; text-decoration: none; }
+/* Top row: breadcrumbs + language switch */
+.rg-topbar { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.rg-breadcrumbs { font-size:.92rem; color:var(--muted); margin:0; }
+.rg-breadcrumbs a { color:inherit; text-decoration:none; }
+
+/* Language switch button */
+.rg-langswitch {
+  display:inline-flex; align-items:center; gap:10px;
+  background: #fff;
+  border: 1px solid var(--card-border);
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(6,10,20,.06);
+}
+.rg-langswitch button {
+  appearance:none; border:0; background:transparent; padding:6px 10px; cursor:pointer;
+  border-radius: 999px; font-weight:600; color:#7d7d7d;
+}
+.rg-langswitch button[aria-pressed="true"] {
+  color:#000;
+  background: linear-gradient(180deg, rgba(203,158,38,.14), rgba(203,158,38,.10));
+  box-shadow: inset 0 0 0 1px rgba(203,158,38,.55);
+}
 
 /* HERO */
-.rg-hero {
-  padding: clamp(32px,6vw,84px) 0;
-  border-bottom: 1px solid var(--card-border);
-}
-.rg-hero h1 {
-  font-weight: 600;
-  font-size: clamp(30px,4vw,44px);
-  letter-spacing: -0.01em;
-  line-height: 1.15;
-  margin: 10px 0;
-}
-.rg-lead {
-  text-align: justify;
-  font-size: clamp(16px,1.5vw,18px);
-  max-width: 72ch;
-}
+.rg-hero { padding:clamp(32px,6vw,84px) 0; border-bottom:1px solid var(--card-border); }
+.rg-hero h1 { font-weight:600; font-size:clamp(30px,4vw,44px); letter-spacing:-.01em; line-height:1.15; margin:10px 0; }
+.rg-lead { text-align:justify; font-size:clamp(16px,1.5vw,18px); max-width:72ch; }
 
-/* GRID SYSTEM */
-.rg-grid { display: grid; gap: clamp(16px,2.2vw,24px); }
-.rg-grid--2 { grid-template-columns: 1fr 1fr; align-items: stretch; }
-.rg-grid--2.reverse { grid-template-columns: 1fr 1fr; align-items: stretch; }
-.rg-grid--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+/* GRID */
+.rg-grid { display:grid; gap:clamp(16px,2.2vw,24px); }
+.rg-grid--2 { grid-template-columns:1fr 1fr; align-items:stretch; }
+.rg-grid--3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
 
-/* Equal-height Hilfsklasse */
-.rg-equal { align-items: stretch; }
-.rg-equal .rg-card,
-.rg-equal .rg-media { display: flex; flex-direction: column; justify-content: center; height: 100%; }
+/* Equal height */
+.rg-equal { align-items:stretch; }
+.rg-equal .rg-card, .rg-equal .rg-media { display:flex; flex-direction:column; justify-content:center; height:100%; }
 
-/* Spezifika für Feature-Blöcke (Green Gold) */
-#green-gold {
-  gap: clamp(18px,2.4vw,28px);
-  margin-block: 44px;
-}
-#green-gold .rg-card { justify-content: center; }
-#green-gold .rg-media { justify-content: center; }
-#green-gold .rg-media-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: clamp(320px, 32vh, 520px);
-  display: flex; align-items: center; justify-content: center;
-}
+/* Green Gold block spacing */
+#green-gold { gap:clamp(18px,2.4vw,28px); margin-block:44px; }
+#green-gold .rg-media-placeholder { width:100%; height:100%; min-height:clamp(320px,32vh,520px); display:flex; align-items:center; justify-content:center; }
 
 /* CARDS */
 .rg-card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(6,10,20,.04);
-  padding: clamp(14px,1.6vw,22px);
-  display: flex; flex-direction: column;
-  transition: box-shadow .25s ease, transform .25s ease;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(6,10,20,.04);
+  padding:clamp(14px,1.6vw,22px);
+  display:flex; flex-direction:column;
+  transition:box-shadow .25s ease, transform .25s ease;
 }
-.rg-card:hover { box-shadow: 0 14px 40px rgba(6,10,20,.10); transform: translateY(-2px); }
+.rg-card:hover { box-shadow:0 14px 40px rgba(6,10,20,.10); transform:translateY(-2px); }
 
-/* Überschriften mit Icon */
-.rg-card h2 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text);
-}
-.rg-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.rg-icon svg {
-  width: 100%;
-  height: 100%;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+/* Headings + icons */
+.rg-card h2 { display:flex; align-items:center; gap:10px; font-size:1.4rem; font-weight:600; color:var(--text); }
+.rg-icon { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; color:var(--gold); flex-shrink:0; }
+.rg-icon svg { width:100%; height:100%; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
 
-/* Filigrane Bullets (noch feiner) */
-.rg-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
-.rg-list li { display: flex; align-items: center; gap: .55rem; line-height: 1.45; }
+/* Lists – ultra-fine gold bullets */
+.rg-list { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
+.rg-list li { display:flex; align-items:center; gap:.55rem; line-height:1.45; }
 .rg-bullet {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
+  width:6px; height:6px; border-radius:50%;
   background: radial-gradient(circle at 30% 30%, #ffe58a, #d4ad31 70%);
   box-shadow: 0 0 0 1px rgba(0,0,0,.08), inset 0 0 0 .25px rgba(0,0,0,.25);
-  flex-shrink: 0;
+  flex-shrink:0;
 }
 
-/* Media/Platzhalter */
+/* Media placeholder */
 .rg-media {
-  margin: 0;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--card-border);
-  background: var(--surface-alt);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--muted);
-  font-size: 1.3rem; font-weight: 600;
-  transition: box-shadow .25s ease, transform .25s ease;
+  margin:0; border-radius:12px; overflow:hidden; border:1px solid var(--card-border);
+  background:var(--surface-alt); display:flex; align-items:center; justify-content:center;
+  color:var(--muted); font-size:1.3rem; font-weight:600;
+  transition:box-shadow .25s ease, transform .25s ease;
 }
-.rg-media:hover { box-shadow: 0 14px 40px rgba(6,10,20,.10); transform: translateY(-2px); }
-.rg-media-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.rg-media:hover { box-shadow:0 14px 40px rgba(6,10,20,.10); transform:translateY(-2px); }
+.rg-media-placeholder { width:100%; height:100%; display:flex; align-items:center; justify-content:center; }
 
 /* Responsive */
 @media (max-width: 992px) {
-  .rg-grid--2, .rg-grid--2.reverse, .rg-grid--3 { grid-template-columns: 1fr; }
-  .rg-equal .rg-card, .rg-equal .rg-media { height: auto; }
-  #green-gold .rg-media-placeholder { min-height: 220px; }
+  .rg-grid--2, .rg-grid--3 { grid-template-columns:1fr; }
+  .rg-equal .rg-card, .rg-equal .rg-media { height:auto; }
+  #green-gold .rg-media-placeholder { min-height:220px; }
 }
 
-/* Reduzierte Animation respektieren */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .rg-card, .rg-media { transition: none; }
+  .rg-card, .rg-media { transition:none; }
 }
-
