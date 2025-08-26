@@ -1,0 +1,139 @@
+<!-- MAGENTO CMS PAGE: Nachhaltigkeit im Goldhandel & Verwahrung (Rheingold) -->
+<!-- Hinweis: Dies ist für Inhalt-Feld (Content) der CMS-Seite gedacht. -->
+
+<style>
+  .rg-sustainability{--card-bg:#fff;--card-border:var(--border-light-grey,#e6e6e6);--muted:var(--text-light-grey,#bcbcbc);--text:var(--text-color,#414141);--gold:var(--primary-color,#cb9e26);--surface-alt:var(--silver-color,#f4f4f4)}
+  .rg-sustainability{color:var(--text);font-family:"Calibri","Carlito",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65}
+  .rg-container{max-width:1160px;margin:0 auto;padding:clamp(16px,2vw,32px)}
+  .rg-breadcrumbs{font-size:.92rem;color:var(--text-light-grey);margin-bottom:8px}
+  .rg-breadcrumbs a{color:inherit;text-decoration:none}
+
+  /* HERO */
+  .rg-hero{padding:clamp(32px,6vw,84px) 0;border-bottom:1px solid var(--border-light-grey)}
+  .rg-hero h1{font-weight:600;font-size:clamp(30px,4vw,44px);letter-spacing:-.01em;line-height:1.15;margin:10px 0 10px}
+  .rg-lead{text-align:justify;font-size:clamp(16px,1.5vw,18px);color:var(--text-color);max-width:72ch}
+
+  /* GRID */
+  .rg-grid{display:grid;gap:clamp(16px,2.2vw,24px)}
+  .rg-grid--2{grid-template-columns:1fr 1fr}
+  .rg-grid--2.reverse{grid-template-columns:1fr 1fr}
+  .rg-grid--3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+  /* Equal-height rows */
+  .rg-equal{align-items:stretch}
+  .rg-equal .rg-card,.rg-equal .rg-media{display:flex;flex-direction:column;height:auto}
+  .rg-equal .rg-card{justify-content:center}
+  .rg-equal .rg-media{justify-content:center}
+
+  /* Force equal height for paired sections */
+  #green-gold, #recycling{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;gap:clamp(18px,2.4vw,28px);margin-block:88px}
+  #green-gold .rg-card, #recycling .rg-card, #green-gold .rg-media, #recycling .rg-media{min-height:100%}
+  #green-gold .rg-media-placeholder, #recycling .rg-media-placeholder{flex:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+
+  /* One-line headings on desktop; wrap on mobile */
+  #green-gold h2, #green-gold h3, #recycling h2, #recycling h3{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  @media (max-width:992px){
+    .rg-grid--2,.rg-grid--2.reverse,.rg-grid--3,#green-gold,#recycling{grid-template-columns:1fr}
+    .rg-equal .rg-card,.rg-equal .rg-media{height:auto}
+    .rg-media-placeholder{height:220px}
+    #green-gold h2, #green-gold h3, #recycling h2, #recycling h3{white-space:normal;text-overflow:clip}
+  }
+
+  /* CARDS & LISTS */
+  .rg-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;box-shadow:0 8px 24px rgba(6,10,20,0.04);padding:clamp(14px,1.6vw,22px);display:flex;flex-direction:column;transition:box-shadow .25s ease, transform .25s ease}
+  .rg-card:hover{box-shadow:0 14px 40px rgba(6,10,20,.10);transform:translateY(-2px)}
+
+  .rg-card h2::before{content:"";display:inline-block;width:28px;height:28px;margin-right:8px;vertical-align:middle;background-size:contain;background-repeat:no-repeat}
+  .icon-heritage h2::before{background-image:url('https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/trees.svg')}
+  .icon-operations h2::before{background-image:url('https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/recycle.svg')}
+  .icon-governance h2::before{background-image:url('https://cdn.jsdelivr.net/gh/tabler/tabler-icons/icons/shield-check.svg')}
+
+  .rg-list{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+  .rg-list li{display:grid;grid-template-columns:16px 1fr;gap:.6rem;align-items:start}
+  .rg-bullet{width:10px;height:10px;border-radius:50%;margin-top:.35rem;background:linear-gradient(180deg, #ffd700, #c9a635);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+
+  /* MEDIA PLACEHOLDER */
+  .rg-media{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--card-border);background:var(--surface-alt);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:1.3rem;font-weight:600;transition:box-shadow .25s ease, transform .25s ease}
+  .rg-media:hover{box-shadow:0 14px 40px rgba(6,10,20,.10);transform:translateY(-2px)}
+  .rg-media-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+
+  /* FAQ */
+  .rg-muted{color:var(--text-light-grey)}
+  .rg-faq details{border:1px solid var(--border-light-grey);border-radius:12px;padding:1rem;background:#fff}
+  .rg-faq details+details{margin-top:10px}
+  .rg-faq summary{cursor:pointer;font-weight:600}
+</style>
+
+<div class="rg-sustainability">
+  <header class="rg-container" role="banner">
+    <nav class="rg-breadcrumbs"><a href="/de/">Startseite</a> · <span>Nachhaltigkeit</span></nav>
+  </header>
+
+  <main id="main" class="rg-container">
+    <!-- HERO -->
+    <section class="rg-hero">
+      <div class="rg-grid rg-grid--2 rg-equal">
+        <div>
+          <h1>Nachhaltigkeit im Goldhandel & in der Verwahrung</h1>
+          <p class="rg-lead">Gold ist mehr als Wertaufbewahrung. Es verpflichtet zu verantwortungsvollem Handeln – gegenüber Menschen, Umwelt und Gesellschaft. Als Edelmetallhändler und -verwahrer in Liechtenstein setzen wir auf nachweislich verantwortungsvolle Beschaffung, CO₂-bewusste Prozesse und höchste Compliance. Wir arbeiten ausschließlich mit <strong>LBMA-zertifizierten Lieferanten</strong>, erfüllen konsequent alle in Liechtenstein geltenden <strong>KYC/AML-Vorgaben</strong> und setzen auf <strong>CO₂-bewusste Logistik</strong>. Zusätzlich bieten wir auf Wunsch <strong>Green Gold</strong> an.</p>
+        </div>
+        <figure class="rg-media"><div class="rg-media-placeholder">Bild 1</div></figure>
+      </div>
+    </section>
+
+    <!-- RESPONSIBLE SOURCING / OPERATIONS / GOVERNANCE -->
+    <section class="rg-grid rg-grid--3" style="margin-top:28px">
+      <article class="rg-card icon-heritage">
+        <h2>Verantwortungsvolle Herkunft</h2>
+        <h3>Nachhaltige Lieferketten</h3>
+        <p>Wir arbeiten nur mit LBMA-zertifizierten Raffinerien und geprüften Lieferanten. Damit stellen wir sicher, dass kein Material aus Konfliktregionen stammt und dass Menschenrechte, Arbeitsbedingungen sowie Umweltauflagen respektiert werden.</p>
+        <ul class="rg-list">
+          <li><span class="rg-bullet"></span>Vollständig dokumentierte Lieferketten</li>
+          <li><span class="rg-bullet"></span>Unabhängige Prüfungen & Audits</li>
+          <li><span class="rg-bullet"></span>Transparenz vom Ursprung bis zum Tresor</li>
+        </ul>
+      </article>
+
+      <article class="rg-card icon-operations">
+        <h2>Green Operations</h2>
+        <h3>Umwelt- & Klimaschutz</h3>
+        <p>Nachhaltigkeit endet für uns nicht bei der Herkunft. Wir optimieren unsere eigenen Prozesse für einen verantwortungsvollen Umgang mit Ressourcen und eine CO₂-bewusste Logistik.</p>
+        <ul class="rg-list">
+          <li><span class="rg-bullet"></span>Energieeffiziente Lagertechnologien</li>
+          <li><span class="rg-bullet"></span>Digitale Prozesse statt Papier</li>
+          <li><span class="rg-bullet"></span>Zusammenarbeit mit CO₂-bewussten Logistikpartnern</li>
+        </ul>
+      </article>
+
+      <article class="rg-card icon-governance">
+        <h2>Governance</h2>
+        <h3>Compliance & Sicherheit</h3>
+        <p>Als Unternehmen in Liechtenstein erfüllen wir strenge gesetzliche Vorgaben. Ergänzend haben wir interne Kontrollmechanismen etabliert, um höchste Standards zu gewährleisten.</p>
+        <ul class="rg-list">
+          <li><span class="rg-bullet"></span>Konsequente KYC- und AML-Richtlinien</li>
+          <li><span class="rg-bullet"></span>Regelmäßige Audits & dokumentierte Prozesse</li>
+          <li><span class="rg-bullet"></span>Risiko-basierte Due-Diligence</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- GREEN GOLD -->
+    <section id="green-gold" class="rg-equal">
+      <div class="rg-card">
+        <h2>Green Gold – Nachhaltige Alternative</h2>
+        <p>Neben klassischem Anlagegold bieten wir <strong>Green Gold</strong> an – eine Option für Kunden, die besonderen Wert auf <strong>Transparenz</strong> und <strong>soziale wie ökologische Standards</strong> legen. Jede Lieferung ist entlang der <strong>Lieferkette</strong> nachverfolgbar, die Förderung erfolgt <strong>umweltbewusst</strong> mit reduzierten Eingriffen in Ökosysteme, und die Produktion respektiert <strong>faire Arbeitsbedingungen</strong> (Ausschluss von Kinderarbeit). Auf Wunsch stellen wir <strong>Chargennachweise</strong> bereit und dokumentieren die <strong>End-to-End-Transparenz</strong> – inklusive Hinweisen auf <strong>anerkannte Zertifizierungen</strong> (z. B. Fairmined, Fairtrade).</p>
+      </div>
+      <figure class="rg-media"><div class="rg-media-placeholder">Bild 2</div></figure>
+    </section>
+
+    <!-- RECYCLING / CIRCULAR ECONOMY -->
+    <section id="recycling" class="rg-equal reverse">
+      <figure class="rg-media"><div class="rg-media-placeholder">Bild 3</div></figure>
+      <div class="rg-card">
+        <h2>Recycling & Circular Economy</h2>
+        <p>Wir nehmen <strong>alte Edelmetallbestände</strong> – etwa <strong>Schmuck</strong>, <strong>Münz- und Medaillensammlungen</strong> oder andere Objekte – entgegen und vergüten diese zum <strong>aktuellen Schmelzwert</strong>. Die Materialien werden an <strong>LBMA-zertifizierte Raffinerien</strong> übergeben, fachgerecht <strong>eingeschmolzen</strong> und zu <strong>standardisierten Anlageprodukten</strong> (z. B. Barren oder Münzen) verarbeitet. Damit leisten wir einen messbaren Beitrag zur <strong>Circular Economy</strong>, reduzieren Primärabbau und schonen Ressourcen. Die Abwicklung erfolgt transparent und rechtssicher – inklusive <strong>Prüfung von Reinheit/Legierung</strong>, dokumentierter <strong>Bewertung</strong> sowie <strong>Beleg/Quittung</strong> für Ihre Unterlagen.</p>
+      </div>
+    </section>
+  </main>
+</div>
