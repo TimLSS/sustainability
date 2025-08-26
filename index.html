@@ -9,113 +9,251 @@
 <body>
 
 <div class="rg-sustainability">
-  <header class="rg-container" role="banner">
+
+  <!-- Topbar: breadcrumbs + language switch -->
+  <header class="rg-container rg-topbar" role="banner">
     <nav class="rg-breadcrumbs"><a href="#">Startseite</a> · <span>Nachhaltigkeit</span></nav>
+    <div class="rg-langswitch" role="group" aria-label="Language switch">
+      <button id="btn-de" type="button" aria-pressed="true">DE</button>
+      <button id="btn-en" type="button" aria-pressed="false">EN</button>
+    </div>
   </header>
 
   <main id="main" class="rg-container">
-    <!-- HERO -->
-    <section class="rg-hero">
-      <div class="rg-grid rg-grid--2 rg-equal">
-        <div>
-          <h1>Nachhaltigkeit im Goldhandel & in der Verwahrung</h1>
-          <p class="rg-lead">
-            Gold ist mehr als Wertaufbewahrung. Es verpflichtet zu verantwortungsvollem Handeln – gegenüber Menschen, Umwelt und Gesellschaft.
-            Als Edelmetallhändler und -verwahrer in Liechtenstein setzen wir auf nachweislich verantwortungsvolle Beschaffung, CO₂-bewusste Prozesse und höchste Compliance.
-            Wir arbeiten ausschließlich mit <strong>LBMA-zertifizierten Lieferanten</strong>, erfüllen konsequent alle in Liechtenstein geltenden <strong>KYC/AML-Vorgaben</strong>
-            und setzen auf <strong>CO₂-bewusste Logistik</strong>. Zusätzlich bieten wir auf Wunsch <strong>Green Gold</strong> an.
+
+    <!-- ===== German content ===== -->
+    <div data-lang="de">
+      <!-- HERO -->
+      <section class="rg-hero">
+        <div class="rg-grid rg-grid--2 rg-equal">
+          <div>
+            <h1>Nachhaltigkeit im Goldhandel & in der Verwahrung</h1>
+            <p class="rg-lead">
+              Gold ist mehr als Wertaufbewahrung. Es verpflichtet zu verantwortungsvollem Handeln – gegenüber Menschen, Umwelt und Gesellschaft.
+              Als Edelmetallhändler und -verwahrer in Liechtenstein setzen wir auf nachweislich verantwortungsvolle Beschaffung, CO₂-bewusste Prozesse und höchste Compliance.
+              Wir arbeiten ausschließlich mit <strong>LBMA-zertifizierten Lieferanten</strong>, erfüllen konsequent alle in Liechtenstein geltenden <strong>KYC/AML-Vorgaben</strong>
+              und setzen auf <strong>CO₂-bewusste Logistik</strong>. Zusätzlich bieten wir auf Wunsch <strong>Green Gold</strong> an.
+            </p>
+          </div>
+          <figure class="rg-media"><div class="rg-media-placeholder">Bild 1</div></figure>
+        </div>
+      </section>
+
+      <!-- 3 Cards -->
+      <section class="rg-grid rg-grid--3" style="margin-top:28px">
+        <article class="rg-card">
+          <h2>
+            <span class="rg-icon" aria-hidden="true">
+              <!-- Tree Icon (klar erkennbar) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22v-4" />
+                <path d="M7 22h10" />
+                <path d="M12 14c-2.761 0-5-2.239-5-5 0-2.05 1.233-3.81 3-4.582C10.51 3.53 11.23 3 12 3s1.49.53 2 .418C15.767 4.19 17 5.95 17 9c0 2.761-2.239 5-5 5z"/>
+                <path d="M9 10h6M10.5 7.5h3"/>
+              </svg>
+            </span>
+            Verantwortungsvolle Herkunft
+          </h2>
+          <h3>Nachhaltige Lieferketten</h3>
+          <p>Wir arbeiten nur mit LBMA-zertifizierten Raffinerien und geprüften Lieferanten. Damit stellen wir sicher, dass kein Material aus Konfliktregionen stammt und dass Menschenrechte, Arbeitsbedingungen sowie Umweltauflagen respektiert werden.</p>
+          <ul class="rg-list">
+            <li><span class="rg-bullet"></span>Vollständig dokumentierte Lieferketten</li>
+            <li><span class="rg-bullet"></span>Unabhängige Prüfungen & Audits</li>
+            <li><span class="rg-bullet"></span>Transparenz vom Ursprung bis zum Tresor</li>
+          </ul>
+        </article>
+
+        <article class="rg-card">
+          <h2>
+            <span class="rg-icon" aria-hidden="true">
+              <!-- Factory Icon (Green Operations) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21V10l5 3V10l5 3V8l3-1v14H3z"/>
+                <path d="M3 21h18"/>
+                <path d="M7 21v-3M10 21v-3M13 21v-3M16 21v-3"/>
+                <path d="M15 5h2v2h-2z"/>
+              </svg>
+            </span>
+            Green Operations
+          </h2>
+          <h3>Umwelt- & Klimaschutz</h3>
+          <p>Nachhaltigkeit endet für uns nicht bei der Herkunft. Wir optimieren unsere eigenen Prozesse für einen verantwortungsvollen Umgang mit Ressourcen und eine CO₂-bewusste Logistik.</p>
+          <ul class="rg-list">
+            <li><span class="rg-bullet"></span>Energieeffiziente Lagertechnologien</li>
+            <li><span class="rg-bullet"></span>Digitale Prozesse statt Papier</li>
+            <li><span class="rg-bullet"></span>Zusammenarbeit mit CO₂-bewussten Logistikpartnern</li>
+          </ul>
+        </article>
+
+        <article class="rg-card">
+          <h2>
+            <span class="rg-icon" aria-hidden="true">
+              <!-- Shield Check Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            Governance
+          </h2>
+          <h3>Compliance & Sicherheit</h3>
+          <p>Als Unternehmen in Liechtenstein erfüllen wir strenge gesetzliche Vorgaben. Ergänzend haben wir interne Kontrollmechanismen etabliert, um höchste Standards zu gewährleisten.</p>
+          <ul class="rg-list">
+            <li><span class="rg-bullet"></span>Konsequente KYC- und AML-Richtlinien</li>
+            <li><span class="rg-bullet"></span>Regelmäßige Audits & dokumentierte Prozesse</li>
+            <li><span class="rg-bullet"></span>Risiko-basierte Due-Diligence</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Green Gold -->
+      <section id="green-gold" class="rg-grid rg-grid--2 rg-equal">
+        <div class="rg-card">
+          <h2>Green Gold – Nachhaltige Alternative</h2>
+          <p>
+            Neben klassischem Anlagegold bieten wir <strong>Green Gold</strong> an – eine Option für Kunden, die besonderen Wert auf
+            <strong>Transparenz</strong> und <strong>soziale wie ökologische Standards</strong> legen. Jede Lieferung ist entlang der
+            <strong>Lieferkette</strong> nachverfolgbar, die Förderung erfolgt <strong>umweltbewusst</strong> mit reduzierten Eingriffen in
+            Ökosysteme, und die Produktion respektiert <strong>faire Arbeitsbedingungen</strong> (Ausschluss von Kinderarbeit). Auf Wunsch
+            stellen wir <strong>Chargennachweise</strong> bereit und dokumentieren die <strong>End-to-End-Transparenz</strong> – inklusive
+            Hinweisen auf <strong>anerkannte Zertifizierungen</strong> (z. B. Fairmined, Fairtrade).
           </p>
         </div>
-        <figure class="rg-media"><div class="rg-media-placeholder">Bild 1</div></figure>
-      </div>
-    </section>
+        <figure class="rg-media"><div class="rg-media-placeholder">Bild 2</div></figure>
+      </section>
+    </div>
 
-    <!-- RESPONSIBLE SOURCING / OPERATIONS / GOVERNANCE -->
-    <section class="rg-grid rg-grid--3" style="margin-top:28px">
-      <article class="rg-card">
-        <h2>
-          <span class="rg-icon" aria-hidden="true">
-            <!-- Tree Icon (klar erkennbar) -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 22v-4" />
-              <path d="M7 22h10" />
-              <path d="M12 14c-2.761 0-5-2.239-5-5 0-2.05 1.233-3.81 3-4.582C10.51 3.53 11.23 3 12 3s1.49.53 2 .418C15.767 4.19 17 5.95 17 9c0 2.761-2.239 5-5 5z"/>
-              <path d="M9 10h6M10.5 7.5h3"/>
-            </svg>
-          </span>
-          Verantwortungsvolle Herkunft
-        </h2>
-        <h3>Nachhaltige Lieferketten</h3>
-        <p>Wir arbeiten nur mit LBMA-zertifizierten Raffinerien und geprüften Lieferanten. Damit stellen wir sicher, dass kein Material aus Konfliktregionen stammt und dass Menschenrechte, Arbeitsbedingungen sowie Umweltauflagen respektiert werden.</p>
-        <ul class="rg-list">
-          <li><span class="rg-bullet"></span>Vollständig dokumentierte Lieferketten</li>
-          <li><span class="rg-bullet"></span>Unabhängige Prüfungen & Audits</li>
-          <li><span class="rg-bullet"></span>Transparenz vom Ursprung bis zum Tresor</li>
-        </ul>
-      </article>
+    <!-- ===== English content ===== -->
+    <div data-lang="en" hidden>
+      <!-- HERO -->
+      <section class="rg-hero">
+        <div class="rg-grid rg-grid--2 rg-equal">
+          <div>
+            <h1>Sustainability in Gold Trading & Custody</h1>
+            <p class="rg-lead">
+              Gold is more than a store of value. It comes with a responsibility to people, the environment, and society.
+              As a precious metals trader and custodian in Liechtenstein, we rely on demonstrably responsible sourcing, CO₂-conscious processes, and the highest standards of compliance.
+              We work exclusively with <strong>LBMA-certified suppliers</strong>, fully meet Liechtenstein’s <strong>KYC/AML requirements</strong>,
+              and follow <strong>CO₂-conscious logistics</strong>. On request, we also offer <strong>Green Gold</strong>.
+            </p>
+          </div>
+          <figure class="rg-media"><div class="rg-media-placeholder">Image 1</div></figure>
+        </div>
+      </section>
 
-      <article class="rg-card">
-        <h2>
-          <span class="rg-icon" aria-hidden="true">
-            <!-- Factory Icon (Green Operations) -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 21V10l5 3V10l5 3V8l3-1v14H3z"/>
-              <path d="M3 21h18"/>
-              <path d="M7 21v-3M10 21v-3M13 21v-3M16 21v-3"/>
-              <path d="M15 5h2v2h-2z"/>
-            </svg>
-          </span>
-          Green Operations
-        </h2>
-        <h3>Umwelt- & Klimaschutz</h3>
-        <p>Nachhaltigkeit endet für uns nicht bei der Herkunft. Wir optimieren unsere eigenen Prozesse für einen verantwortungsvollen Umgang mit Ressourcen und eine CO₂-bewusste Logistik.</p>
-        <ul class="rg-list">
-          <li><span class="rg-bullet"></span>Energieeffiziente Lagertechnologien</li>
-          <li><span class="rg-bullet"></span>Digitale Prozesse statt Papier</li>
-          <li><span class="rg-bullet"></span>Zusammenarbeit mit CO₂-bewussten Logistikpartnern</li>
-        </ul>
-      </article>
+      <!-- 3 Cards -->
+      <section class="rg-grid rg-grid--3" style="margin-top:28px">
+        <article class="rg-card">
+          <h2>
+            <span class="rg-icon" aria-hidden="true">
+              <!-- Tree Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22v-4" />
+                <path d="M7 22h10" />
+                <path d="M12 14c-2.761 0-5-2.239-5-5 0-2.05 1.233-3.81 3-4.582C10.51 3.53 11.23 3 12 3s1.49.53 2 .418C15.767 4.19 17 5.95 17 9c0 2.761-2.239 5-5 5z"/>
+                <path d="M9 10h6M10.5 7.5h3"/>
+              </svg>
+            </span>
+            Responsible Origin
+          </h2>
+          <h3>Responsible Supply Chains</h3>
+          <p>We only work with LBMA-certified refineries and vetted partners to ensure no material originates from conflict areas and that human rights, labour conditions, and environmental standards are respected.</p>
+          <ul class="rg-list">
+            <li><span class="rg-bullet"></span>Fully documented supply chains</li>
+            <li><span class="rg-bullet"></span>Independent audits & reviews</li>
+            <li><span class="rg-bullet"></span>Transparency from source to vault</li>
+          </ul>
+        </article>
 
-      <article class="rg-card">
-        <h2>
-          <span class="rg-icon" aria-hidden="true">
-            <!-- Shield Check Icon -->
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
-          </span>
-          Governance
-        </h2>
-        <h3>Compliance & Sicherheit</h3>
-        <p>Als Unternehmen in Liechtenstein erfüllen wir strenge gesetzliche Vorgaben. Ergänzend haben wir interne Kontrollmechanismen etabliert, um höchste Standards zu gewährleisten.</p>
-        <ul class="rg-list">
-          <li><span class="rg-bullet"></span>Konsequente KYC- und AML-Richtlinien</li>
-          <li><span class="rg-bullet"></span>Regelmäßige Audits & dokumentierte Prozesse</li>
-          <li><span class="rg-bullet"></span>Risiko-basierte Due-Diligence</li>
-        </ul>
-      </article>
-    </section>
+        <article class="rg-card">
+          <h2>
+            <span class="rg-icon" aria-hidden="true">
+              <!-- Factory Icon (Green Operations) -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21V10l5 3V10l5 3V8l3-1v14H3z"/>
+                <path d="M3 21h18"/>
+                <path d="M7 21v-3M10 21v-3M13 21v-3M16 21v-3"/>
+                <path d="M15 5h2v2h-2z"/>
+              </svg>
+            </span>
+            Green Operations
+          </h2>
+          <h3>Environment & Climate</h3>
+          <p>We continuously optimise our internal processes for resource-efficient operations and CO₂-conscious logistics.</p>
+          <ul class="rg-list">
+            <li><span class="rg-bullet"></span>Energy-efficient storage technologies</li>
+            <li><span class="rg-bullet"></span>Digital processes instead of paper</li>
+            <li><span class="rg-bullet"></span>CO₂-conscious logistics partnerships</li>
+          </ul>
+        </article>
 
-    <!-- GREEN GOLD -->
-    <section id="green-gold" class="rg-grid rg-grid--2 rg-equal">
-      <div class="rg-card">
-        <h2>Green Gold – Nachhaltige Alternative</h2>
-        <p>
-          Neben klassischem Anlagegold bieten wir <strong>Green Gold</strong> an – eine Option für Kunden, die besonderen Wert auf
-          <strong>Transparenz</strong> und <strong>soziale wie ökologische Standards</strong> legen. Jede Lieferung ist entlang der
-          <strong>Lieferkette</strong> nachverfolgbar, die Förderung erfolgt <strong>umweltbewusst</strong> mit reduzierten Eingriffen in
-          Ökosysteme, und die Produktion respektiert <strong>faire Arbeitsbedingungen</strong> (Ausschluss von Kinderarbeit). Auf Wunsch
-          stellen wir <strong>Chargennachweise</strong> bereit und dokumentieren die <strong>End-to-End-Transparenz</strong> – inklusive
-          Hinweisen auf <strong>anerkannte Zertifizierungen</strong> (z. B. Fairmined, Fairtrade).
-        </p>
-      </div>
-      <figure class="rg-media"><div class="rg-media-placeholder">Bild 2</div></figure>
-    </section>
+        <article class="rg-card">
+          <h2>
+            <span class="rg-icon" aria-hidden="true">
+              <!-- Shield Check Icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+            </span>
+            Governance
+          </h2>
+          <h3>Compliance & Security</h3>
+          <p>Operating in Liechtenstein, we adhere to stringent legal requirements and maintain internal controls to safeguard the highest standards.</p>
+          <ul class="rg-list">
+            <li><span class="rg-bullet"></span>Strict KYC/AML procedures</li>
+            <li><span class="rg-bullet"></span>Regular audits & documented processes</li>
+            <li><span class="rg-bullet"></span>Risk-based due diligence</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Green Gold -->
+      <section id="green-gold" class="rg-grid rg-grid--2 rg-equal">
+        <div class="rg-card">
+          <h2>Green Gold – Sustainable Alternative</h2>
+          <p>
+            In addition to classic investment gold, we offer <strong>Green Gold</strong> – for clients who prioritise
+            <strong>transparency</strong> and <strong>social and environmental standards</strong>. Each delivery is traceable along the
+            <strong>supply chain</strong>; extraction is <strong>environment-aware</strong> with reduced ecosystem impact; and production respects
+            <strong>fair labour conditions</strong> (no child labour). On request, we provide <strong>batch certificates</strong> and end-to-end
+            <strong>transparency documentation</strong>, including references to <strong>recognised certifications</strong> (e.g., Fairmined, Fairtrade).
+          </p>
+        </div>
+        <figure class="rg-media"><div class="rg-media-placeholder">Image 2</div></figure>
+      </section>
+    </div>
+
   </main>
 </div>
 
+<script>
+  (function(){
+    const de = document.querySelector('[data-lang="de"]');
+    const en = document.querySelector('[data-lang="en"]');
+    const bDe = document.getElementById('btn-de');
+    const bEn = document.getElementById('btn-en');
 
+    function setLang(lang){
+      const isDE = lang === 'de';
+      de.hidden = !isDE;
+      en.hidden = isDE;
+      bDe.setAttribute('aria-pressed', String(isDE));
+      bEn.setAttribute('aria-pressed', String(!isDE));
+      // set html lang attribute
+      document.documentElement.setAttribute('lang', isDE ? 'de' : 'en');
+      try { localStorage.setItem('rg-lang', lang); } catch(e){}
+    }
+
+    // init
+    const saved = (function(){ try { return localStorage.getItem('rg-lang'); } catch(e){ return null; }})();
+    setLang(saved === 'en' ? 'en' : 'de');
+
+    // handlers
+    bDe.addEventListener('click', () => setLang('de'));
+    bEn.addEventListener('click', () => setLang('en'));
+  })();
+</script>
 
 </body>
 </html>
