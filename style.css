@@ -1,3 +1,6 @@
+/* Rheingold – Nachhaltigkeit Seite (final) */
+
+/* Theme-Variablen & Grundsetup */
 .rg-sustainability {
   --card-bg: #fff;
   --card-border: #e6e6e6;
@@ -7,57 +10,126 @@
   --surface-alt: #f4f4f4;
 
   color: var(--text);
-  font-family: "Calibri","Carlito",system-ui,sans-serif;
+  font-family: "Calibri","Carlito",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   line-height: 1.65;
 }
 
-.rg-container { max-width:1160px; margin:0 auto; padding:clamp(16px,2vw,32px); }
-
-.rg-hero { padding:clamp(32px,6vw,84px) 0; border-bottom:1px solid var(--card-border); }
-.rg-hero h1 { font-weight:600; font-size:clamp(30px,4vw,44px); line-height:1.15; margin:10px 0; }
-.rg-lead { text-align:justify; font-size:clamp(16px,1.5vw,18px); max-width:72ch; }
-
-.rg-grid { display:grid; gap:clamp(16px,2.2vw,24px); }
-.rg-grid--2 { grid-template-columns:1fr 1fr; }
-.rg-grid--2.reverse { grid-template-columns:1fr 1fr; }
-.rg-grid--3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
-.rg-equal { align-items:stretch; }
-.rg-equal .rg-card, .rg-equal .rg-media { display:flex; flex-direction:column; justify-content:center; height:auto; }
-
-@media(max-width:992px) {
-  .rg-grid--2, .rg-grid--2.reverse, .rg-grid--3 { grid-template-columns:1fr; }
-  .rg-equal .rg-card, .rg-equal .rg-media { height:auto; }
+/* Layout-Container */
+.rg-container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: clamp(16px,2vw,32px);
 }
 
+/* Breadcrumb/Top-Nav – optional */
+.rg-breadcrumbs { font-size: .92rem; color: var(--muted); margin-bottom: 8px; }
+.rg-breadcrumbs a { color: inherit; text-decoration: none; }
+
+/* HERO */
+.rg-hero {
+  padding: clamp(32px,6vw,84px) 0;
+  border-bottom: 1px solid var(--card-border);
+}
+.rg-hero h1 {
+  font-weight: 600;
+  font-size: clamp(30px,4vw,44px);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 10px 0;
+}
+.rg-lead {
+  text-align: justify;
+  font-size: clamp(16px,1.5vw,18px);
+  max-width: 72ch;
+}
+
+/* GRID SYSTEM */
+.rg-grid { display: grid; gap: clamp(16px,2.2vw,24px); }
+.rg-grid--2 { grid-template-columns: 1fr 1fr; align-items: stretch; }
+.rg-grid--2.reverse { grid-template-columns: 1fr 1fr; align-items: stretch; }
+.rg-grid--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+
+/* Equal-height Hilfsklasse (stellt sicher, dass beide Spalten gleich hoch laufen) */
+.rg-equal { align-items: stretch; }
+.rg-equal .rg-card,
+.rg-equal .rg-media { display: flex; flex-direction: column; justify-content: center; height: 100%; }
+
+/* Spezifika für die Feature-Blöcke (Green Gold / Recycling) */
+#green-gold, #recycling {
+  /* gleicher Spaltengap & vertikaler Abstand */
+  gap: clamp(18px,2.4vw,28px);
+  margin-block: 44px;
+}
+#green-gold .rg-card, #recycling .rg-card {
+  /* mittig ausrichten und gleich hoch wirken lassen */
+  justify-content: center;
+}
+#green-gold .rg-media, #recycling .rg-media {
+  justify-content: center;
+}
+#green-gold .rg-media-placeholder,
+#recycling .rg-media-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: clamp(320px, 32vh, 520px); /* hilft, visuell dieselbe Höhe zu halten */
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* One-line Headings (Desktop); auf Mobile wieder normal umbrechen */
+#green-gold h2, #green-gold h3, #recycling h2, #recycling h3 {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* CARDS */
 .rg-card {
-  background:var(--card-bg);
-  border:1px solid var(--card-border);
-  border-radius:12px;
-  box-shadow:0 8px 24px rgba(6,10,20,.04);
-  padding:clamp(14px,1.6vw,22px);
-  display:flex; flex-direction:column;
-  transition:.25s;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(6,10,20,.04);
+  padding: clamp(14px,1.6vw,22px);
+  display: flex; flex-direction: column;
+  transition: box-shadow .25s ease, transform .25s ease;
 }
-.rg-card:hover { box-shadow:0 14px 40px rgba(6,10,20,.10); transform:translateY(-2px); }
+.rg-card:hover { box-shadow: 0 14px 40px rgba(6,10,20,.10); transform: translateY(-2px); }
 
-.rg-card h2 { display:flex; align-items:center; gap:8px; }
-.rg-icon { display:inline-flex; width:28px; height:28px; color:var(--gold); }
-.rg-icon svg { width:100%; height:100%; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+/* Überschriften-Icons */
+.rg-card h2 { display: flex; align-items: center; gap: 8px; }
+.rg-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: var(--gold); }
+.rg-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-.rg-list { margin:0; padding:0; list-style:none; display:grid; gap:10px; }
+/* Listen (goldene Bullets für CI) */
+.rg-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.rg-list li { display: grid; grid-template-columns: 16px 1fr; gap: .6rem; align-items: start; }
 .rg-bullet {
-  width:10px; height:10px; border-radius:50%; margin-top:.35rem;
-  background:linear-gradient(180deg,#ffd700,#c9a635);
-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+  width: 10px; height: 10px; border-radius: 50%; margin-top: .35rem;
+  background: linear-gradient(180deg, #ffd700, #c9a635);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
 }
 
+/* Media/Platzhalter */
 .rg-media {
-  border-radius:12px;
-  overflow:hidden;
-  border:1px solid var(--card-border);
-  background:var(--surface-alt);
-  display:flex; align-items:center; justify-content:center;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: var(--surface-alt);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted);
+  font-size: 1.3rem; font-weight: 600;
+  transition: box-shadow .25s ease, transform .25s ease;
 }
-.rg-media-placeholder {
-  width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+.rg-media:hover { box-shadow: 0 14px 40px rgba(6,10,20,.10); transform: translateY(-2px); }
+.rg-media-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .rg-grid--2, .rg-grid--2.reverse, .rg-grid--3 { grid-template-columns: 1fr; }
+  .rg-equal .rg-card, .rg-equal .rg-media { height: auto; }
+  #green-gold .rg-media-placeholder, #recycling .rg-media-placeholder { min-height: 220px; }
+  #green-gold h2, #green-gold h3, #recycling h2, #recycling h3 { white-space: normal; text-overflow: clip; }
+}
+
+/* Reduzierte Animation respektieren */
+@media (prefers-reduced-motion: reduce) {
+  .rg-card, .rg-media { transition: none; }
 }
