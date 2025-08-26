@@ -49,35 +49,23 @@
 .rg-grid--2.reverse { grid-template-columns: 1fr 1fr; align-items: stretch; }
 .rg-grid--3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
 
-/* Equal-height Hilfsklasse (stellt sicher, dass beide Spalten gleich hoch laufen) */
+/* Equal-height Hilfsklasse */
 .rg-equal { align-items: stretch; }
 .rg-equal .rg-card,
 .rg-equal .rg-media { display: flex; flex-direction: column; justify-content: center; height: 100%; }
 
-/* Spezifika für die Feature-Blöcke (Green Gold / Recycling) */
-#green-gold, #recycling {
-  /* gleicher Spaltengap & vertikaler Abstand */
+/* Spezifika für Feature-Blöcke (Green Gold) */
+#green-gold {
   gap: clamp(18px,2.4vw,28px);
   margin-block: 44px;
 }
-#green-gold .rg-card, #recycling .rg-card {
-  /* mittig ausrichten und gleich hoch wirken lassen */
-  justify-content: center;
-}
-#green-gold .rg-media, #recycling .rg-media {
-  justify-content: center;
-}
-#green-gold .rg-media-placeholder,
-#recycling .rg-media-placeholder {
+#green-gold .rg-card { justify-content: center; }
+#green-gold .rg-media { justify-content: center; }
+#green-gold .rg-media-placeholder {
   width: 100%;
   height: 100%;
-  min-height: clamp(320px, 32vh, 520px); /* hilft, visuell dieselbe Höhe zu halten */
+  min-height: clamp(320px, 32vh, 520px);
   display: flex; align-items: center; justify-content: center;
-}
-
-/* One-line Headings (Desktop); auf Mobile wieder normal umbrechen */
-#green-gold h2, #green-gold h3, #recycling h2, #recycling h3 {
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
 /* CARDS */
@@ -92,18 +80,44 @@
 }
 .rg-card:hover { box-shadow: 0 14px 40px rgba(6,10,20,.10); transform: translateY(-2px); }
 
-/* Überschriften-Icons */
-.rg-card h2 { display: flex; align-items: center; gap: 8px; }
-.rg-icon { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: var(--gold); }
-.rg-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* Überschriften mit Icon */
+.rg-card h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.rg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.rg-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
-/* Listen (goldene Bullets für CI) */
-.rg-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
-.rg-list li { display: grid; grid-template-columns: 16px 1fr; gap: .6rem; align-items: start; }
+/* Filigrane Bullets */
+.rg-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.rg-list li { display: flex; align-items: center; gap: .6rem; line-height: 1.4; }
 .rg-bullet {
-  width: 10px; height: 10px; border-radius: 50%; margin-top: .35rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   background: linear-gradient(180deg, #ffd700, #c9a635);
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);
+  box-shadow: inset 0 0 0 0.5px rgba(0,0,0,.1);
+  flex-shrink: 0;
 }
 
 /* Media/Platzhalter */
@@ -125,8 +139,7 @@
 @media (max-width: 992px) {
   .rg-grid--2, .rg-grid--2.reverse, .rg-grid--3 { grid-template-columns: 1fr; }
   .rg-equal .rg-card, .rg-equal .rg-media { height: auto; }
-  #green-gold .rg-media-placeholder, #recycling .rg-media-placeholder { min-height: 220px; }
-  #green-gold h2, #green-gold h3, #recycling h2, #recycling h3 { white-space: normal; text-overflow: clip; }
+  #green-gold .rg-media-placeholder { min-height: 220px; }
 }
 
 /* Reduzierte Animation respektieren */
